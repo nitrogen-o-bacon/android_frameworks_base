@@ -230,7 +230,7 @@ public final class PowerManagerService extends SystemService
 
     // File location for last reboot reason
     private static final String LAST_REBOOT_LOCATION = "/data/misc/reboot/last_reboot_reason";
-    
+
     private static final float PROXIMITY_NEAR_THRESHOLD = 5.0f;
 
     private final Context mContext;
