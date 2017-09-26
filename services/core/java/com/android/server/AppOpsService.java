@@ -277,10 +277,17 @@ public class AppOpsService extends IAppOpsService.Stub {
                     } catch (RemoteException ignored) {
                     }
                     if (curUid != ops.uidState.uid) {
-                        Slog.i(TAG, "Pruning old package " + ops.packageName
-                                + "/" + ops.uidState + ": new uid=" + curUid);
-                        it.remove();
-                        changed = true;
+                        // Do not prune apps that are not currently present in the device
+                        // (like SDcard ones). While booting, SDcards are not available but
+                        // must not be purged from AppOps, because they are still present
+                        // in the Android app database.
+                        String pkgName = mContext.getPackageManager().getNameForUid(ops.uidState.uid);
+                        if (curUid != -1 || pkgName == null || !pkgName.equals(ops.packageName)) {
+                            Slog.i(TAG, "Pruning old package " + ops.packageName
+                                    + "/" + ops.uidState + ": new uid=" + curUid);
+                            it.remove();
+                            changed = true;
+                        }
                     }
                 }
 
@@ -1035,7 +1042,7 @@ public class AppOpsService extends IAppOpsService.Stub {
     public int checkPackage(int uid, String packageName) {
         Preconditions.checkNotNull(packageName);
         synchronized (this) {
-            if (getOpsRawLocked(uid, packageName, true) != null) {
+            if (packageName != null && getOpsRawLocked(uid, packageName, true) != null) {
                 return AppOpsManager.MODE_ALLOWED;
             } else {
                 return AppOpsManager.MODE_ERRORED;
@@ -1315,10 +1322,13 @@ public class AppOpsService extends IAppOpsService.Stub {
                     if (pkgUid != uid) {
                         // Oops!  The package name is not valid for the uid they are calling
                         // under.  Abort.
-                        RuntimeException ex = new RuntimeException("here");
-                        ex.fillInStackTrace();
-                        Slog.w(TAG, "Bad call: specified package " + packageName
-                                + " under uid " + uid + " but it is really " + pkgUid, ex);
+                        if (!"com.google.android.gms".equals(packageName)) {
+                            // Google GMS is our overlord. Don't spam the log
+                            RuntimeException ex = new RuntimeException("Package uid doesn't match or it is not valid");
+                            ex.fillInStackTrace();
+                            Slog.w(TAG, "Bad call: specified package " + packageName
+                                    + " under uid " + uid + " but it is really " + pkgUid, ex);
+                        }
                         return null;
                     }
                 } finally {
