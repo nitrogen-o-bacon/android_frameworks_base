@@ -28,12 +28,15 @@
     <string name="global_action_restart_advanced">Расшир. перезагрузка</string>
     <string name="global_action_restart_recovery">В режим восстановления</string>
     <string name="global_action_restart_bootloader">В загрузчик</string>
+    <string name="global_action_screenrecord">Запись экрана</string>
 
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Перезагрузка</string>
     <string name="quick_settings_reboot_recovery_label">В рекавери</string>
 
     <string name="statusbar_items_title">Редактирование иконок</string>
+
+    <string name="quick_settings_pip_tile_app_na">Приложение не поддерживает PiP</string>
 
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Снимок экрана</string>
@@ -56,4 +59,29 @@
     <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления включены.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления отключены.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
+
+    <string name="lockscreen_default">По умолчанию</string>
+    <string name="lockscreen_hidden">Нет</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Проведите пальцем от иконки в сторону центра экрана</string>
+
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Всплывающее уведомление отложено на 1 минуту.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Всплывающее уведомление отложено на <xliff:g id="number">%d</xliff:g> минут.</string>
+
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">Идёт запись экрана</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Запись экрана</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Стоп</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Показать нажатия</string>
+    <string name="screenrecord_notif_pointer_off">Скрыть нажатия</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Невозможно записать экран</string>
+    <string name="notification_channel_screenrecord">Запись экрана</string>
+
+    <!-- Screenrecord Tile -->
+    <string name="quick_settings_screenrecord">Запись экрана</string>
 </resources>

@@ -3938,6 +3938,15 @@ public final class Settings {
          */
 
         /**
+         * Whether allowing pocket service to register sensors and dispatch informations.
+         *   0 = disabled
+         *   1 = enabled
+         * @author Carlo Savignano
+         * @hide
+         */
+        public static final String POCKET_JUDGE = "pocket_judge";
+
+        /**
          * Whether to use the MTP by default after connecting to PC
          * @hide
          */
@@ -4004,6 +4013,12 @@ public final class Settings {
          * @hide
          */
         public static final String ENABLE_CONDITIONS = "enable_conditions";
+
+        /**
+         * Disable dashboard suggestions in settings
+         * @hide
+         */
+        public static final String ENABLE_SUGGESTIONS = "enable_suggestions";
 
         /**
          * Whether to show the weather info on the lock screen
@@ -4352,6 +4367,13 @@ public final class Settings {
         public static final String POWERMENU_TORCH = "powermenu_torch";
 
         /**
+         * Whether to display the screenrecord option in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_SCREENRECORD = "powermenu_screenrecord";
+
+        /**
          * Boolean value whether to link ringtone and notification volume
          *
          * @hide
@@ -4363,12 +4385,6 @@ public final class Settings {
          * @hide
          */
         public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
-
-        /**
-         * Unlock keystore with fingerprint after reboot
-         * @hide
-         */
-        public static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 
         /**
          * whether to enable or disable vibration on succesful fingerprint auth
@@ -4383,6 +4399,44 @@ public final class Settings {
          * @hide
          */
         public static final String HEADS_UP_STOPLIST_VALUES = "heads_up_stoplist_values";
+
+        /**
+         * Which applications to disable heads up notifications for
+         *
+         * @hide
+         */
+        public static final String HEADS_UP_BLACKLIST_VALUES = "heads_up_blacklist_values";
+
+        /**
+         * Whether to enable status and navigation bar color in battery saver mode.
+         * Heads up timeout configuration
+         * @hide
+         */
+        public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
+
+        /**
+         * Defines the global heads up notification snooze
+         * @hide
+         */
+        public static final String HEADS_UP_NOTIFICATION_SNOOZE = "heads_up_notification_snooze";
+
+        /**
+         * Whether to control brightness from status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+
+        /**
+         * Whether to show Brightness Icon On Brightness Slider
+         * @hide
+         */
+        public static final String QS_SHOW_BRIGHTNESS_ICON = "qs_show_brightness_icon";
+
+        /**
+         * Toast icon
+         * @hide
+         */
+        public static final String TOAST_ICON = "toast_icon";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -7507,6 +7561,13 @@ public final class Settings {
         public static final String LOCK_POWER_MENU_DISABLED = "lockscreen_power_menu_disabled";
 
         /**
+         * Disable expanding quick settings on secure lock screens
+         *
+         * @hide
+         */
+        public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
@@ -10226,7 +10287,7 @@ public final class Settings {
         /** @hide */ public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1;
         /** @hide */ public static final int ZEN_MODE_NO_INTERRUPTIONS = 2;
         /** @hide */ public static final int ZEN_MODE_ALARMS = 3;
-
+        /** @hide */ public static final int ZEN_MODE_OFF_ONLY = 4;
         /** @hide */ public static String zenModeToString(int mode) {
             if (mode == ZEN_MODE_IMPORTANT_INTERRUPTIONS) return "ZEN_MODE_IMPORTANT_INTERRUPTIONS";
             if (mode == ZEN_MODE_ALARMS) return "ZEN_MODE_ALARMS";

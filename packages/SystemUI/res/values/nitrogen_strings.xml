@@ -30,6 +30,7 @@
     <string name="global_action_restart_advanced">Advanced reboot</string>
     <string name="global_action_restart_recovery">Go to recovery</string>
     <string name="global_action_restart_bootloader">Go to bootloader</string>
+    <string name="global_action_screenrecord">Screenrecord</string>
 
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Reboot</string>
@@ -39,6 +40,7 @@
 
     <!-- PiP Tile -->
     <string name="quick_settings_pip_label">PiP</string>
+    <string name="quick_settings_pip_tile_app_na">App does not support PiP</string>
 
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Screenshot</string>
@@ -67,4 +69,29 @@
     <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads up turned off.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads up turned on.</string>
+
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Swipe from icon to launch</string>
+
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">Screen is being recorded</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Recording screen</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Stop</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Show pointer</string>
+    <string name="screenrecord_notif_pointer_off">Hide pointer</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Unable to record screen</string>
+    <string name="notification_channel_screenrecord">Screenrecords</string>
+
+    <!-- Screenrecord Tile -->
+    <string name="quick_settings_screenrecord">Screenrecord</string>
 </resources>
